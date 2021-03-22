@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "589E4690-C668-467E-AE3F-6967130D06C6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "A9DBD350-523B-4614-83A7-01047667B541"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "DMTestTableViewCell.setupLayout"
+            moduleName = "">
+            <Locations>
+               <Location
+                  uuid = "A9DBD350-523B-4614-83A7-01047667B541 - c4b62d2694b0b285"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewDemo.DMTestTableViewCell.setupLayout() -&gt; ()"
+                  moduleName = "TableViewDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lap13528/Downloads/projects/TableViewDemo/TableViewDemo/View/DMTestTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
