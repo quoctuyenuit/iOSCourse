@@ -15,8 +15,15 @@
 		B01910EE2608EBAC0010446E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01910EC2608EBAC0010446E /* LaunchScreen.storyboard */; };
 		B01910F92608EBAC0010446E /* TableViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01910F82608EBAC0010446E /* TableViewDemoTests.swift */; };
 		B01911042608EBAC0010446E /* TableViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01911032608EBAC0010446E /* TableViewDemoUITests.swift */; };
-		B01911162608EC9A0010446E /* DMTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01911152608EC9A0010446E /* DMTableViewCellObject.swift */; };
-		B019111F2608ED860010446E /* DMTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019111E2608ED860010446E /* DMTestTableViewCell.swift */; };
+		B01911162608EC9A0010446E /* DMProfileCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01911152608EC9A0010446E /* DMProfileCellObject.swift */; };
+		B019111F2608ED860010446E /* DMProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019111E2608ED860010446E /* DMProfileTableViewCell.swift */; };
+		B0F8BAA7260F7161002E8455 /* DMBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BAA6260F7161002E8455 /* DMBasicTableViewCell.swift */; };
+		B0F8BAAF260F7310002E8455 /* DMTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BAAE260F7310002E8455 /* DMTableViewCellProtocol.swift */; };
+		B0F8BAB7260F73E0002E8455 /* DMBasicCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BAB6260F73E0002E8455 /* DMBasicCellObject.swift */; };
+		B0F8BABC260F740A002E8455 /* DMCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BABB260F740A002E8455 /* DMCellObject.swift */; };
+		B0F8BAC5260F7813002E8455 /* DMTableViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BAC4260F7813002E8455 /* DMTableViewCreator.swift */; };
+		B0F8BACD260F8310002E8455 /* DMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BACC260F8310002E8455 /* DMViewModel.swift */; };
+		B0F8BAD3260F8334002E8455 /* DMSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8BAD2260F8334002E8455 /* DMSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +58,15 @@
 		B01910FF2608EBAC0010446E /* TableViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01911032608EBAC0010446E /* TableViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDemoUITests.swift; sourceTree = "<group>"; };
 		B01911052608EBAC0010446E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B01911152608EC9A0010446E /* DMTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTableViewCellObject.swift; sourceTree = "<group>"; };
-		B019111E2608ED860010446E /* DMTestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTestTableViewCell.swift; sourceTree = "<group>"; };
+		B01911152608EC9A0010446E /* DMProfileCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMProfileCellObject.swift; sourceTree = "<group>"; };
+		B019111E2608ED860010446E /* DMProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMProfileTableViewCell.swift; sourceTree = "<group>"; };
+		B0F8BAA6260F7161002E8455 /* DMBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMBasicTableViewCell.swift; sourceTree = "<group>"; };
+		B0F8BAAE260F7310002E8455 /* DMTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTableViewCellProtocol.swift; sourceTree = "<group>"; };
+		B0F8BAB6260F73E0002E8455 /* DMBasicCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMBasicCellObject.swift; sourceTree = "<group>"; };
+		B0F8BABB260F740A002E8455 /* DMCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMCellObject.swift; sourceTree = "<group>"; };
+		B0F8BAC4260F7813002E8455 /* DMTableViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTableViewCreator.swift; sourceTree = "<group>"; };
+		B0F8BACC260F8310002E8455 /* DMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMViewModel.swift; sourceTree = "<group>"; };
+		B0F8BAD2260F8334002E8455 /* DMSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +117,13 @@
 		B01910E02608EBAB0010446E /* TableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B0F8BAD1260F8316002E8455 /* DMViewModel */,
+				B01910E52608EBAB0010446E /* ViewController.swift */,
+				B0F8BAC3260F77F2002E8455 /* ViewModel */,
 				B019111D2608ED7A0010446E /* View */,
 				B01911142608EC830010446E /* Model */,
 				B01910E12608EBAB0010446E /* AppDelegate.swift */,
 				B01910E32608EBAB0010446E /* SceneDelegate.swift */,
-				B01910E52608EBAB0010446E /* ViewController.swift */,
 				B01910E72608EBAB0010446E /* Main.storyboard */,
 				B01910EA2608EBAC0010446E /* Assets.xcassets */,
 				B01910EC2608EBAC0010446E /* LaunchScreen.storyboard */,
@@ -137,7 +153,9 @@
 		B01911142608EC830010446E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B01911152608EC9A0010446E /* DMTableViewCellObject.swift */,
+				B0F8BABB260F740A002E8455 /* DMCellObject.swift */,
+				B01911152608EC9A0010446E /* DMProfileCellObject.swift */,
+				B0F8BAB6260F73E0002E8455 /* DMBasicCellObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,9 +163,28 @@
 		B019111D2608ED7A0010446E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B019111E2608ED860010446E /* DMTestTableViewCell.swift */,
+				B019111E2608ED860010446E /* DMProfileTableViewCell.swift */,
+				B0F8BAA6260F7161002E8455 /* DMBasicTableViewCell.swift */,
+				B0F8BAAE260F7310002E8455 /* DMTableViewCellProtocol.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B0F8BAC3260F77F2002E8455 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0F8BAC4260F7813002E8455 /* DMTableViewCreator.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B0F8BAD1260F8316002E8455 /* DMViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0F8BACC260F8310002E8455 /* DMViewModel.swift */,
+				B0F8BAD2260F8334002E8455 /* DMSection.swift */,
+			);
+			path = DMViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,11 +317,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F8BAD3260F8334002E8455 /* DMSection.swift in Sources */,
+				B0F8BAAF260F7310002E8455 /* DMTableViewCellProtocol.swift in Sources */,
+				B0F8BAC5260F7813002E8455 /* DMTableViewCreator.swift in Sources */,
 				B01910E62608EBAB0010446E /* ViewController.swift in Sources */,
-				B01911162608EC9A0010446E /* DMTableViewCellObject.swift in Sources */,
+				B01911162608EC9A0010446E /* DMProfileCellObject.swift in Sources */,
+				B0F8BACD260F8310002E8455 /* DMViewModel.swift in Sources */,
+				B0F8BABC260F740A002E8455 /* DMCellObject.swift in Sources */,
 				B01910E22608EBAB0010446E /* AppDelegate.swift in Sources */,
+				B0F8BAB7260F73E0002E8455 /* DMBasicCellObject.swift in Sources */,
+				B0F8BAA7260F7161002E8455 /* DMBasicTableViewCell.swift in Sources */,
 				B01910E42608EBAB0010446E /* SceneDelegate.swift in Sources */,
-				B019111F2608ED860010446E /* DMTestTableViewCell.swift in Sources */,
+				B019111F2608ED860010446E /* DMProfileTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

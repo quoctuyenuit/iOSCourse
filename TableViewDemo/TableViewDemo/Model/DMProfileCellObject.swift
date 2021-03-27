@@ -7,14 +7,13 @@
 
 import UIKit
 
-class DMTableViewCellObject: NSObject {
+class DMProfileCellObject: DMCellObject {
     let image:UIImage?
-    let title:String
     let timestamp:String
     
-    init(image:UIImage?, title:String, timestamp:String) {
+    init(title: String, cellClass:AnyClass, image:UIImage?, timestamp: String) {
         self.image = image
-        self.title = title
         self.timestamp = timestamp
+        super.init(title: title, cellClass: cellClass)
     }
 }

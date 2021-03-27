@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var tableView: UITableView? = nil
-    var viewModel: NSArray? = nil
-    let reuseIdentifier = "TestReuseIdentifier"
+    let viewModel: DMViewModel = DMViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +24,8 @@ class ViewController: UIViewController {
         
         self.setupView()
         
-        self.viewModel = [
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title, Day la title, Day la title, Day la title, Day la title, Day la title, Day la title, Day la title", timestamp: "10h trước"),
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title", timestamp: "10h trước"),
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title", timestamp: "10h trước"),
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title", timestamp: "10h trước"),
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title", timestamp: "10h trước"),
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title", timestamp: "10h trước"),
-            DMTableViewCellObject(image: UIImage(named: "avt"), title: "Day la title", timestamp: "10h trước"),
-        ]
+        DMTableViewCreator.buildProfileCellObjectWithViewModel(viewModel: self.viewModel)
+        DMTableViewCreator.buildBasicCellObjectWithViewModel(viewModel: self.viewModel)
     }
     
     func setupView() {
@@ -52,25 +44,32 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate , UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel?.count ?? 0
+        return self.viewModel.numberOfRow(in: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellObject: DMCellObject = self.viewModel.object(row: indexPath.row, section: indexPath.section) as! DMCellObject
+        /// generate reuse identifier from object's class name
+        let reuseIdentifier = NSStringFromClass(type(of: cellObject))
+        
         var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
         
-        // If cell is nill ==> Init cell by init method
         if (cell == nil) {
-            cell = DMTestTableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
+            /// Cast cellClass as UITableViewCell type to use UITableViewCell's initialization method
+            if let cellClass = cellObject.cellClass as? UITableViewCell.Type {
+                cell = cellClass.init(style:UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
+            }
         }
         
-        if let dmCell = cell as? DMTestTableViewCell {
-            let object = self.viewModel?.object(at: indexPath.row)
-            dmCell.shouldUpdateCellWithObject(object: object as! DMTableViewCellObject)
-            return dmCell
+        /// Cast cell as UITableViewCell which conform DMTableViewCellProtocol
+        if let dmCell = cell as? (UITableViewCell & DMTableViewCellProtocol) {
+            dmCell.shouldUpdateWithObject(object: cellObject)
+        } else {
+            assert(false, "Cell not conform protocol DMTableViewCellProtocol")
         }
         
         return cell ?? UITableViewCell()

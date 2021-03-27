@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DMTestTableViewCell: UITableViewCell {
+class DMProfileTableViewCell: UITableViewCell {
     let imgView: UIImageView = UIImageView()
     let titleLabel: UILabel = UILabel()
     let timestampLabel: UILabel = UILabel()
@@ -28,12 +28,6 @@ class DMTestTableViewCell: UITableViewCell {
         self.imgView.image = nil
         self.titleLabel.text = ""
         self.timestampLabel.text = ""
-    }
-    
-    func shouldUpdateCellWithObject(object : DMTableViewCellObject) {
-        self.imgView.image = object.image
-        self.titleLabel.text = object.title
-        self.timestampLabel.text = object.timestamp
     }
     
     func initProperties() {
@@ -76,4 +70,14 @@ class DMTestTableViewCell: UITableViewCell {
         ])
     }
 
+}
+
+extension DMProfileTableViewCell: DMTableViewCellProtocol {
+    func shouldUpdateWithObject(object: AnyObject) {
+        if let cellObject = object as? DMProfileCellObject {
+            self.imgView.image = cellObject.image
+            self.titleLabel.text = cellObject.title
+            self.timestampLabel.text = cellObject.timestamp
+        }
+    }
 }
